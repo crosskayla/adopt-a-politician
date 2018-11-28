@@ -8,7 +8,7 @@
 
 voters = Voter.create([
   {username: "kayla@kayla.com", password_digest: "supersecure", age: 25, dollars: 1000, admin: true},
-  {username: "sean@sean.com", password_digest: "wethebestmusic", age: 25, dollars: 10000, admin: false}
+  {username: "sean@sean.com", password_digest: "wethebestpolitician", age: 25, dollars: 10000, admin: false}
 ])
 
 politicians = Politician.create([
