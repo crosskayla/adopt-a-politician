@@ -16,7 +16,8 @@ class VotersController < ApplicationController
   def create
     @voter = Voter.new(voter_params)
     if @voter.save
-      #log in and redirect
+      session[:voter_id] = @voter.id
+      redirect_to voter_path(@voter)
     else #prompt user to correct errors
       render :new
     end
@@ -25,7 +26,7 @@ class VotersController < ApplicationController
   private
 
     def voter_params
-      params.require("voter").permit("username", "password_digest", "party", "age", "dollars", "admin")
+      params.require(:voter).permit(:username, :password, :party, :age, :dollars, :admin)
     end
 
 end

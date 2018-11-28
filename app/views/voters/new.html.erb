@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h2>Sign up</h2>
+    <%= form_for @voter do |f| %>
+
+    <% if @voter.errors.any? %>
+      <div class="alert alert-danger">
+        <strong>Error:</strong> Please correct the following errors and try again:
+        <ul>
+        <% @voter.errors.full_messages.each do |error_message| %>
+          <li><%= error_message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+      <%= f.label :username %>
+      <%= f.text_field :username, class: "form-control" %>
+
+      <%= f.label :password %>
+      <%= f.text_field :password, class: "form-control", type: "password" %>
+
+      <%= f.label :age %>
+      <%= f.text_field :age, class: "form-control" %>
+
+      <%= f.label :dollars %>
+      <%= f.text_field :dollars, class: "form-control" %>
+      <br>
+      <%= f.label :admin, class: "form-check-label" %>
+      <%= f.check_box :admin, class: "form-check-input" %>
+
+      <hr class="my-4">
+      <%= f.submit "Create account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

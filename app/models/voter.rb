@@ -5,4 +5,12 @@ class Voter < ApplicationRecord
 
   validates :username, uniqueness: true
   validates :age, inclusion: { in: 18..122 }
+  validates :dollars, presence: true
+
+  after_initialize :init
+
+  def init
+  end
+
+
 end
