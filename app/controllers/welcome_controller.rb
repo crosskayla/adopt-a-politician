@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
 
-  def greet
+  def greet #TODO render greet unless logged in
   end
 
 end
