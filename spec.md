@@ -16,7 +16,8 @@ Specs:
       Donation has_many Tags through DonationTags, Tag has_many Donations through DonationTags
 - [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
       Donation attributes (dollars (amount), description, and url)
-- [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+- [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+  Voter, Politician, Tag 
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
       Voter.highest_donator, Politician.most_dollars, Politician.most_donations, Tag.most_popular
 - [ ] Include signup (how e.g. Devise)
