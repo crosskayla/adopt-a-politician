@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dollars: 1
+  description: MyString
+  url: MyString
+  voter: one
+  politician: one
+
+two:
+  dollars: 1
+  description: MyString
+  url: MyString
+  voter: two
+  politician: two
