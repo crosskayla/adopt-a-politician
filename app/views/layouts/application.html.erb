@@ -30,7 +30,7 @@
             <% if signed_in? %>
               <li><a href="/voters/<%= current_user.id %>">My account</a></li>
               <li><a href="/politicians">Browse politicians</a></li>
-              <li><a href="/signout">Sign out</a></li>
+              <li><a href="/logout">Log out</a></li> 
             <% else %>
               <li><a href="/login">Log in</a></li>
             <% end %>

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h2>Make a donation</h2>
+    <%= form_for @donation do |f| %>
+      <%= f.hidden_field :voter_id, value: session[:voter_id] %>
+
+      <% if @donation.errors.any? %>
+        <div class="alert alert-danger">
+          <strong>Error:</strong> Please correct the following errors and try again:
+          <ul>
+          <% @donation.errors.full_messages.each do |error_message| %>
+            <li><%= error_message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= f.label :politician %>
+      <%= f.collection_select :politician_id, Politician.all, :id, :name, class: "form-control" %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description, class: "form-control" %>
+
+      <%= f.label :url %>
+      <%= f.text_field :url, class: "form-control" %>
+
+      <%= f.label :dollars %>
+      <%= f.text_field :dollars, class: "form-control" %>
+      <% if @message %>
+        <div class="alert alert-danger">
+          <strong>Error:</strong> <%= flash[:message] %>
+        </div>
+      <% end %>
+
+      <hr class="my-4">
+      <%= f.submit "Donate!", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -7,6 +7,7 @@ class VotersController < ApplicationController
 
   def show
     @voter = Voter.find_by_id(params[:id])
+    @donations = @voter.donations
   end
 
   def new
