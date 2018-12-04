@@ -23,14 +23,16 @@
           </div>
           <ul class="nav navbar-nav navbar-left">
             <li class="active"><a href="/">Home</a></li>
-            <li><a href="/">Optional Link</a></li>
+            <% if signed_in? %>
+              <li><a href="/politicians">Browse politicians</a></li>
+            <% end %>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
             <% if signed_in? %>
+              <li><a href="#"><span class="glyphicon glyphicon-credit-card"></span> Wallet contains $<%= current_user.dollars %></a></li>
               <li><a href="/voters/<%= current_user.id %>">My account</a></li>
-              <li><a href="/politicians">Browse politicians</a></li>
-              <li><a href="/logout">Log out</a></li> 
+              <li><a href="/logout">Log out</a></li>
             <% else %>
               <li><a href="/login">Log in</a></li>
             <% end %>

@@ -1,7 +1,7 @@
 <center>
   <h1>From: <%= link_to @donation.voter.username, voter_path(@donation.voter) %></h1>
   <h1>To: <%= link_to @donation.politician.name, politician_path(@donation.politician) %></h1>
-  <h2>Amount: <%= @donation.dollars %></h2>
-  <h2>On: <%= @donation.created_at %></h2>
+  <h2>Amount: $<%= @donation.dollars %></h2>
+  <h2>On: <%= @donation.created_at.strftime("%b %e, %Y") %></h2>
   <h2><i><%= @donation.description %></i></h2>
 </center

@@ -1,1 +1,30 @@
-<h1>Hey there, <%= @voter.username %></h1>
+<center>
+<div class="container">
+  <h1>Hey there, <%= @voter.username %></h1>
+  <h3>Total Donations: $<%= @voter.total_donations %></h3>
+  <h3>Favorite Politician: <%= @voter.favorite_politician %></h3>
+  <% if @donations.any? %>
+    <div class="container col-sm-6 col-sm-offset-3">
+    <hr>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" class="col-sm-1">Amount</th>
+          <th scope="col" class="col-sm-2">Politician</th>
+          <th scope="col" class="col-sm-3">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <% @donations.each do |donation| %>
+            <tr>
+              <th scope="row"><%= link_to "$#{donation.dollars}", donation_path(donation) %></th>
+              <td><%= link_to donation.politician.name, politician_path(donation.politician) %></td>
+              <td><%=donation.description%> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+</div>
+</center>

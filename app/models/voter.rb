@@ -18,5 +18,9 @@ class Voter < ApplicationRecord
     self.donations.sum{|d| d.dollars}
   end
 
+  def favorite_politician #finds most donated to politician
+    self.politicians.maximum("name")
+  end
+
 
 end
