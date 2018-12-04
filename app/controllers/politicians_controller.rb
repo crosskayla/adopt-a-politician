@@ -16,10 +16,6 @@ class PoliticiansController < ApplicationController
 
   private
 
-    def can_access?
-      redirect_to '/' unless signed_in?
-    end
-
     def politician_params
       params.require(:politician).permit(
         :name,

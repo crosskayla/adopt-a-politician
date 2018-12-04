@@ -1,5 +1,5 @@
 class VotersController < ApplicationController
-  #before_action :private_method, only: [:show, :edit, :update, :destroy]
+  before_action :can_access?, only: [:index, :show]
 
   def index
     @voters = Voter.all

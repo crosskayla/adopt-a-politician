@@ -1,4 +1,5 @@
 class DonationsController < ApplicationController
+  before_action :can_access?
 
   def show
     @donation = Donation.find_by_id(params[:id])
