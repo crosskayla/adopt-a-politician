@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :donations
-  resources :politicians
-  resources :voters #TODO --> nest donations under voters
+  resources :politicians do
+    resources :donations
+  end
+  resources :voters
   resources :sessions, only: [:new, :create, :destroy]
   root 'welcome#greet'
 
