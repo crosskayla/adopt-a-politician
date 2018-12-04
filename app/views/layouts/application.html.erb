@@ -29,9 +29,10 @@
           <ul class="nav navbar-nav navbar-right">
             <% if signed_in? %>
               <li><a href="/voters/<%= current_user.id %>">My account</a></li>
+              <li><a href="/politicians">Browse politicians</a></li>
               <li><a href="/signout">Sign out</a></li>
             <% else %>
-              <li><a href="/signin">Sign in</a></li>
+              <li><a href="/login">Log in</a></li>
             <% end %>
           </ul>
       </div>
