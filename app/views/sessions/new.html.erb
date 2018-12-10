@@ -1,6 +1,7 @@
 <div class="container">
   <div class="col-sm-6 col-sm-offset-3">
     <h2>Log In</h2>
+    <h4><%= link_to('Or log in with Facebook!', '/auth/facebook') %></h4><br>
     <%= form_for @voter, :url => url_for(:controller => 'sessions', :action => 'create') do |f| %>
 
     <% if @voter.errors.any? %>

@@ -27,6 +27,13 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#Use Omniauth for Facebook third party login
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
+# Used to mock an https url
+gem 'thin'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

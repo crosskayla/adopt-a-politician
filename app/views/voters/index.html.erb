@@ -1,0 +1,6 @@
+<center>
+  <% @voters.each do |voter| %>
+    <h2><%= link_to voter.username, voter_path(voter) %></h2>
+    <p><b>Total Donations:</b> $<%= voter.donations.total_donations %></p>
+  <% end %>
+</center>

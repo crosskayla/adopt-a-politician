@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_28_022347) do
+ActiveRecord::Schema.define(version: 2018_12_10_233828) do
 
   create_table "donation_tags", force: :cascade do |t|
     t.integer "donation_id"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2018_11_28_022347) do
     t.boolean "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
+    t.integer "uid"
   end
 
 end

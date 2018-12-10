@@ -7,7 +7,9 @@
       <p class="lead"><b>Favorite Politician:</b> <%= @voter.favorite_politician %></p>
       <%= render partial: "donations/list", locals: {donations: @donations} %>
     <% else %>
-      <h3>No donations yet!</h3>
+      <p class="lead">No donations yet!</p>
+      <a class="btn btn-primary btn-lg" href="<%= politicians_path %>" role="button">Browse politicians</a>
+      <a class="btn btn-primary btn-lg" href="<%= donations_path %>" role="button">Browse donations</a>
     <% end %>
   </div>
 </center>
