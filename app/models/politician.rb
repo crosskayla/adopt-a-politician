@@ -5,7 +5,11 @@ class Politician < ApplicationRecord
   validates :name, uniqueness: true
 
   def average_donation
-    self.donations.average(:dollars).round
+    self.donations&.average(:dollars)&.round || 0
+  end
+
+  def total_donations
+    self.donations&.sum(:dollars) || 0
   end
 
 end

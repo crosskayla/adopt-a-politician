@@ -17,22 +17,25 @@ Specs:
 - [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
       Donation attributes (dollars (amount), description, and url)
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
-  Voter, Politician, Tag 
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+  Voter, Politician, Tag
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
       Voter.highest_donator, Politician.most_dollars, Politician.most_donations, Tag.most_popular
-- [ ] Include signup (how e.g. Devise)
-- [ ] Include login (how e.g. Devise)
-- [ ] Include logout (how e.g. Devise)
+- [x] Include signup (how e.g. Devise)
+      Sessions controller
+- [x] Include login (how e.g. Devise)
+      Sessions controller
+- [x] Include logout (how e.g. Devise)
+      Sessions controller
 - [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
-      voters/1/donations
+- [x] Include nested resource show or index (URL e.g. users/2/recipes)
       politicians/1/donations
 - [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
       voters/1/donations
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
+      /users/new
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
+- [x] The application is pretty DRY
+- [x] Limited logic in controllers
+- [x] Views use helper methods if appropriate
 - [ ] Views use partials if appropriate

@@ -1,0 +1,28 @@
+<h4><%= pluralize(@donations.size, "Donation") %></h4>
+<h4>Total donated: $<%= @donations.total_donations %></h4>
+<h4>Average donation: $<%= @donations.average_donation %></h4><br>
+
+<div class="container col-sm-10 col-sm-offset-1">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col" class="col-sm-1">Amount</th>
+        <th scope="col" class="col-sm-1">When</th>
+        <th scope="col" class="col-sm-2">Voter</th>
+        <th scope="col" class="col-sm-2">Politician</th>
+        <th scope="col" class="col-sm-3">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% donations.each do |donation| %>
+          <tr>
+            <th scope="row"><%= link_to "$#{donation.dollars}", politician_donation_path(donation.politician, donation) %></th>
+            <td><%= donation.created_at.strftime("%b %e, %Y") %></td>
+            <td><%= link_to donation.voter.username, voter_path(donation.voter) %></td>
+            <td><%= link_to donation.politician.name, politician_path(donation.politician) %></td>
+            <td><%= donation.description %> </td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>

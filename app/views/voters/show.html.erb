@@ -2,8 +2,8 @@
 <div class="container">
   <h1>Hey there, <%= @voter.username %></h1>
   <h3>Total Donations: $<%= @voter.total_donations %></h3>
-  <h3>Favorite Politician: <%= @voter.favorite_politician %></h3>
   <% if @donations.any? %>
+  <h3>Favorite Politician: <%= @voter.favorite_politician %></h3>
     <div class="container col-sm-6 col-sm-offset-3">
     <hr>
     <table class="table">

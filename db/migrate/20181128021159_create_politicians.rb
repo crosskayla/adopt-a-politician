@@ -3,7 +3,6 @@ class CreatePoliticians < ActiveRecord::Migration[5.2]
     create_table :politicians do |t|
       t.string :name
       t.string :party
-      t.integer :dollars
 
       t.timestamps
     end

@@ -19,8 +19,7 @@ class PoliticiansController < ApplicationController
     def politician_params
       params.require(:politician).permit(
         :name,
-        :party,
-        :dollars
+        :party
       )
     end
 

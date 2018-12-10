@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :donations
   resources :politicians do
-    resources :donations
+    resources :donations, only: [:index, :show, :new]
   end
+  resources :donations
   resources :voters
   resources :sessions, only: [:new, :create, :destroy]
   root 'welcome#greet'

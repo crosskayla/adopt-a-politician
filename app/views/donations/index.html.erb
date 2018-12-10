@@ -1,0 +1,12 @@
+<center>
+  <div class="container">
+    <h1>All Donations</h1>
+
+    <% if @donations.any? %>
+      <%= render partial: "list", locals: {donations: @donations} %>
+    <% else %>
+      <h3>No donations yet.</h3>
+    <% end %>
+
+  </div>
+</center>

@@ -32,9 +32,6 @@ class DonationsController < ApplicationController
     end
   end
 
-  def index
-  end
-
   private
 
     def donation_params

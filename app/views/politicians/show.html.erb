@@ -1,32 +1,14 @@
 <center>
   <div class="container">
-  <h1><%= @politician.name %></h1>
-  <h3>Party: <%= @politician.party %></h3>
-  <h3>Total donations: $<%= @politician.total_donations %></h3>
-  <h3>Average donation: $<%= @politician.average_donation %></h3><br>
-  <p><%= link_to "Donate to #{@politician.name}", new_politician_donation_path(@politician), class: "btn btn-info", role: "button" %></p>
-  <% if @donations.any? %>
-    <div class="container col-sm-6 col-sm-offset-3">
-    <br>
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col" class="col-sm-1">Amount</th>
-          <th scope="col" class="col-sm-2">Voter</th>
-          <th scope="col" class="col-sm-3">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <% @donations.each do |donation| %>
-            <tr>
-              <th scope="row"><%= link_to "$#{donation.dollars}", donation_path(donation) %></th>
-              <td><%= link_to donation.voter.username, voter_path(donation.voter) %></td>
-              <td><%= donation.description %> </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  <% end %>
+    <h1><%= @politician.name %></h1>
+    <h4>Party: <%= @politician.party %></h4>
+
+    <% if @politician.donations.any? %>
+      <%= render partial: "donations/list", locals: {donations: @donations} %>
+    <% else %>
+      <h3>No one's donated to <%= @politician.name %> yet. Be the first!</h3>
+    <% end %>
   </div>
+  <br>
+  <p><%= link_to "Donate to #{@politician.name}", new_politician_donation_path(@politician), class: "btn btn-primary", role: "button" %></p>
 </center>

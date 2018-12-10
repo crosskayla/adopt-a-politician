@@ -4,13 +4,13 @@ class SessionsController < ApplicationController
     @voter = Voter.new
   end
 
-  def create 
+  def create
     @voter = Voter.find_by_username(params[:voter][:username])
     if @voter && @voter.authenticate(params[:voter][:password])
       session[:voter_id] = @voter.id
       redirect_to voter_path(@voter)
     else
-      render :new
+      redirect_to login_path
     end
   end
 
