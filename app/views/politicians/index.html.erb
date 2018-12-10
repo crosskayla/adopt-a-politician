@@ -3,6 +3,6 @@
     <h2><%= link_to politician.name, politician_path(politician) %></h2>
     <p><b>Party:</b> <%= politician.party %></p>
     <p><b>Total Donations:</b> $<%= politician.total_donations %></p>
-    <p><i><%= link_to "Donate to #{politician.name}", new_politician_donation_path(politician) %></i></p>
+    <p><%= link_to "Donate to #{politician.name}", new_politician_donation_path(politician), class: "btn btn-primary", role: "button"%></p>
   <% end %>
 </center>

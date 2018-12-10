@@ -6,7 +6,7 @@
     <% if @politician.donations.any? %>
       <%= render partial: "donations/list", locals: {donations: @donations} %>
     <% else %>
-      <h3>No one's donated to <%= @politician.name %> yet. Be the first!</h3>
+      <p class="lead">No one's donated to <%= @politician.name %> yet.</p>
     <% end %>
   </div>
   <br>

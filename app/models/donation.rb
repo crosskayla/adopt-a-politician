@@ -3,6 +3,8 @@ class Donation < ApplicationRecord
   belongs_to :politician
   has_many :donation_tags
   has_many :tags, through: :donation_tags
+  validates :description, length: { maximum: 200 }
+  validates :dollars, presence: true
 
   def make_donation
     if self.voter.dollars >= self.dollars

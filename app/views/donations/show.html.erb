@@ -1,7 +1,9 @@
 <center>
-  <h1>From: <%= link_to @donation.voter.username, voter_path(@donation.voter) %></h1>
-  <h1>To: <%= link_to @donation.politician.name, politician_path(@donation.politician) %></h1>
-  <h2>Amount: $<%= @donation.dollars %></h2>
-  <h2>On: <%= @donation.created_at.strftime("%b %e, %Y") %></h2>
-  <h2><i><%= @donation.description %></i></h2>
-</center
+  <div class="container col-sm-6 col-sm-offset-3">
+    <p class="lead"><b>From:</b> <%= link_to @donation.voter.username, voter_path(@donation.voter) %></p>
+    <p class="lead"><b>To:</b> <%= link_to @donation.politician.name, politician_path(@donation.politician) %></p>
+    <p class="lead"><b>Amount:</b> $<%= @donation.dollars %></p>
+    <p class="lead"><b>On:</b> <%= @donation.created_at.strftime("%b %e, %Y") %></p>
+    <p class="lead"><i><%= @donation.description %></i></p>
+  </div>
+</center>
