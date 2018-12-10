@@ -1,8 +1,9 @@
-<h4><%= pluralize(@donations.size, "Donation") %></h4>
-<h4>Total donated: $<%= @donations.total_donations %></h4>
-<h4>Average donation: $<%= @donations.average_donation %></h4><br>
+<p class="lead"><b>Total donated:</b> $<%= @donations.total_donations %> (<%= pluralize(@donations.size, "total donation") %>)</p>
+<p class="lead"><b>Average donation:</b> $<%= @donations.average_donation %></p>
 
 <div class="container col-sm-10 col-sm-offset-1">
+  
+  <hr class="my-4">
   <table class="table">
     <thead class="thead-dark">
       <tr>

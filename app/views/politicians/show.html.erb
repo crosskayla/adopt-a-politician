@@ -1,7 +1,7 @@
 <center>
   <div class="container">
-    <h1><%= @politician.name %></h1>
-    <h4>Party: <%= @politician.party %></h4>
+    <h1><%= @politician.name %></h1><br>
+    <p class="lead"><b>Party:</b> <%= @politician.party %></p>
 
     <% if @politician.donations.any? %>
       <%= render partial: "donations/list", locals: {donations: @donations} %>

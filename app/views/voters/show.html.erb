@@ -1,30 +1,13 @@
 <center>
-<div class="container">
-  <h1>Hey there, <%= @voter.username %></h1>
-  <h3>Total Donations: $<%= @voter.total_donations %></h3>
-  <% if @donations.any? %>
-  <h3>Favorite Politician: <%= @voter.favorite_politician %></h3>
-    <div class="container col-sm-6 col-sm-offset-3">
-    <hr>
-    <table class="table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col" class="col-sm-1">Amount</th>
-          <th scope="col" class="col-sm-2">Politician</th>
-          <th scope="col" class="col-sm-3">Description</th>
-        </tr>
-      </thead>
-      <tbody>
-          <% @donations.each do |donation| %>
-            <tr>
-              <th scope="row"><%= link_to "$#{donation.dollars}", donation_path(donation) %></th>
-              <td><%= link_to donation.politician.name, politician_path(donation.politician) %></td>
-              <td><%=donation.description%> </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  <% end %>
-</div>
+  <div class="container col-sm-10 col-sm-offset-1">
+    <h1 class="display-4">Hey there, <%= @voter.username %></h1>
+    <br>
+
+    <% if @donations.any? %>
+      <p class="lead"><b>Favorite Politician:</b> <%= @voter.favorite_politician %></p>
+      <%= render partial: "donations/list", locals: {donations: @donations} %>
+    <% else %>
+      <h3>No donations yet!</h3>
+    <% end %>
+  </div>
 </center>
