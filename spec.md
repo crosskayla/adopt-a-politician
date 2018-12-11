@@ -26,7 +26,8 @@ Specs:
       Sessions controller
 - [x] Include logout (how e.g. Devise)
       Sessions controller
-- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
+- [x] Include third party signup/login (how e.g. Devise/OmniAuth)
+      Omniauth
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
       politicians/1/donations
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
