@@ -1,15 +1,21 @@
 <center>
   <div class="container col-sm-10 col-sm-offset-1">
-    <h1 class="display-4">Hey there, <%= @voter.username %></h1>
-    <br>
+    <% if current_user.admin || current_user.id == @voter.id  %>
+      <h1 class="display-4">Hey there, <%= @voter.username %></h1>
+      <br>
 
-    <% if @donations.any? %>
-      <p class="lead"><b>Favorite Politician:</b> <%= @voter.favorite_politician %></p>
-      <%= render partial: "donations/list", locals: {donations: @donations} %>
+      <% if @donations.any? %>
+        <p class="lead"><b>Favorite Politician:</b> <%= @voter.favorite_politician %></p>
+        <%= render partial: "donations/list", locals: {donations: @donations} %>
+      <% else %>
+        <p class="lead">No donations yet!</p>
+        <a class="btn btn-primary btn-md" href="<%= politicians_path %>" role="button">Browse politicians</a>
+        <a class="btn btn-primary btn-md" href="<%= donations_path %>" role="button">Browse donations</a>
+      <% end %>
     <% else %>
-      <p class="lead">No donations yet!</p>
-      <a class="btn btn-primary btn-lg" href="<%= politicians_path %>" role="button">Browse politicians</a>
-      <a class="btn btn-primary btn-lg" href="<%= donations_path %>" role="button">Browse donations</a>
+      <h1>Sorry!</h1>
+      <h3>Only admins can view other people's pages.</h3><br>
+      <%= link_to "Back to my page", voter_path(current_user), class: "btn btn-primary", role: "button"%>
     <% end %>
   </div>
 </center>

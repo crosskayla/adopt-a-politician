@@ -38,7 +38,6 @@ class DonationsController < ApplicationController
       params.require(:donation).permit(
         :dollars,
         :description,
-        :url,
         :politician_id,
         :voter_id)
     end

@@ -1,6 +1,13 @@
 <center>
-  <% @voters.each do |voter| %>
-    <h2><%= link_to voter.username, voter_path(voter) %></h2>
-    <p><b>Total Donations:</b> $<%= voter.donations.total_donations %></p>
+  <% if current_user.admin %>
+    <% @voters.each do |voter| %>
+      <h2><%= link_to voter.username, voter_path(voter) %></h2>
+      <p><b>Total Donations:</b> $<%= voter.donations.total_donations %></p>
+      <p><b>Favorite Politician:</b> <%= voter.favorite_politician || "None" %></p>
+    <% end %>
+  <% else %>
+    <h1>Sorry!</h1>
+    <h3>Only admins can view this page.</h3><br>
+    <%= link_to "Back to my page", voter_path(current_user), class: "btn btn-primary", role: "button"%>
   <% end %>
 </center>

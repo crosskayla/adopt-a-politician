@@ -25,5 +25,4 @@ class Donation < ApplicationRecord
     Donation.all&.average(:dollars)&.round || 0
   end
 
-  #TODO --> FIND A URL PREVIEW GEM
 end
