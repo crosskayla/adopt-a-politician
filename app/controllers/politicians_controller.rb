@@ -2,7 +2,7 @@ class PoliticiansController < ApplicationController
   before_action :can_access?
 
   def index
-    @politicians = Politician.all
+    @politicians = Politician.all.order(:name)
   end
 
   def show

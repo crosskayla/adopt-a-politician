@@ -19,7 +19,7 @@ class Voter < ApplicationRecord
   end
 
   def favorite_politician #finds most donated to politician
-    self.politicians.maximum("name")
+    self.donations.order("dollars DESC").first.politician.name
   end
 
 

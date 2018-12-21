@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       @voter = Voter.find_by_username(params[:voter][:username])
       if @voter && @voter.authenticate(params[:voter][:password])
         session[:voter_id] = @voter.id
-        redirect_to voter_path(@voter)
+        redirect_to donations_path(@voter)
       else
         redirect_to login_path
       end
